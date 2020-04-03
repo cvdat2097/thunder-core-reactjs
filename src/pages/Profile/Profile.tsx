@@ -1,5 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Actions } from '../../model';
 
-const Profile = () => <div>Profile Page</div>;
+const mapStateToProps = (entireState: any) => entireState.subState;
 
-export default Profile;
+const mapDispatchToProps = {
+  doSomething: Actions.subState.doSomething,
+};
+
+const Profile = (props: any) => {
+  return (
+    <>
+      <h2>Profile Page</h2>
+    </>
+  );
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
