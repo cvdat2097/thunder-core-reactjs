@@ -1,17 +1,18 @@
 import React from 'react';
 import './App.scss';
+import { BrowserRouter } from 'react-router-dom';
 import { MainLayout } from './layout/MainLayout';
-import { Button } from '@material-ui/core';
+import AppRoute from './utils/AppRoute/AppRoute';
+import routes from './config/routes';
 
 function App() {
   return (
     <div className="App">
-      <MainLayout>
-        <h1>React App</h1>
-        <Button variant="contained" color="primary">
-          Click here
-        </Button>
-      </MainLayout>
+      <BrowserRouter>
+        <MainLayout>
+          <AppRoute routes={routes} />
+        </MainLayout>
+      </BrowserRouter>
     </div>
   );
 }
