@@ -4,12 +4,16 @@ import { AppRouteProps } from './type';
 
 const AppRoute = ({ routes }: AppRouteProps) => (
   <Switch>
-    {routes.map(({ path, children, component, ...rest }) => {
+    {routes.map(({ path, children, component, ...rest }, index) => {
+      const uniqueKey = `${path}${index}`;
+
       if (children && children.length && !component) {
-        return <AppRoute routes={children} />;
+        return <AppRoute key={uniqueKey} routes={children} />;
       }
 
-      return <Route path={path} component={component} {...rest} />;
+      return (
+        <Route key={uniqueKey} path={path} component={component} {...rest} />
+      );
     })}
   </Switch>
 );
