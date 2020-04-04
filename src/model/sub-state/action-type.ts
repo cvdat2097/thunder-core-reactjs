@@ -1,3 +1,4 @@
 export default {
   ACTION: 'TAKE ACTION',
+  DO_SOMETHING_ASYNC: 'DO SOME THING ASYNC',
 };

@@ -5,12 +5,15 @@ import { Actions } from '../../model';
 const mapStateToProps = (entireState: any) => entireState.subState;
 
 const mapDispatchToProps = {
-  doSomething: Actions.subState.doSomething,
+  doSomethingAsync: Actions.subState.doSomethingAsync,
+  gotSomething: Actions.subState.gotSomething,
 };
 
 const Profile = (props: any) => {
+  (window as any).props = props;
   return (
     <>
+      {props.counter}
       <h2>Profile Page</h2>
     </>
   );
