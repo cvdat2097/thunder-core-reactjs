@@ -6,6 +6,7 @@ import { MainLayout } from './layout/MainLayout';
 import AppRoute from './utils/AppRoute/AppRoute';
 import routes from './config/routes';
 import { store } from './model';
+import './locales';
 
 function App() {
   return (
