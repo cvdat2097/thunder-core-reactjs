@@ -1,11 +1,10 @@
-import Profile from '../pages/Profile';
-import ProfileEdit from '../pages/ProfileEdit';
+import { lazy } from 'react';
 import { RouteConfig } from '../utils/AppRoute';
 
 export default [
   {
     path: '/user',
-    component: Profile,
+    component: lazy(() => import('../pages/Profile')),
   },
   {
     path: '/profile',
@@ -14,12 +13,12 @@ export default [
     children: [
       {
         path: '/profile/edit',
-        component: ProfileEdit,
+        component: lazy(() => import('../pages/ProfileEdit')),
         exact: true,
       },
       {
         path: '/profile/save',
-        component: ProfileEdit,
+        component: lazy(() => import('../pages/ProfileEdit')),
       },
     ],
   },
