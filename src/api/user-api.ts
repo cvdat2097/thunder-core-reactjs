@@ -1,4 +1,7 @@
+// import request from '../services/request-service';
+
 export const login = async (username: string, password: string) => {
+  // await request.get('/employees'); // testing
   return await {
     token: '123',
     refreshToken: '321',
