@@ -1,11 +1,7 @@
+import { createAction } from '../helper';
+
 import SubAction1 from './action-type';
 
-export const doSomethingAsync = (payload: any) => ({
-  type: SubAction1.DO_SOMETHING_ASYNC,
-  ...payload,
-});
+export const doSomethingAsync = createAction(SubAction1.DO_SOMETHING_ASYNC);
 
-export const gotSomething = (payload: any) => ({
-  type: SubAction1.ACTION,
-  ...payload,
-});
+export const gotSomething = createAction(SubAction1.ACTION);
