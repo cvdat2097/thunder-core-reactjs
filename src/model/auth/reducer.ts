@@ -2,17 +2,22 @@ import { Action } from '../type';
 import ActionType from './action-type';
 
 const INITIAL_STATE = {
-  counter: 3,
+  user: {
+    userId: null,
+    username: null,
+    password: null,
+    roles: null,
+  },
 };
 
 export default (state = INITIAL_STATE, action: Action) => {
-  const { type } = action;
+  const { type, user } = action;
 
   switch (type) {
-    case ActionType.ACTION:
+    case ActionType.LOGIN_SUCCEEDED:
       return {
         ...state,
-        counter: state.counter + 1,
+        user,
       };
 
     default:
